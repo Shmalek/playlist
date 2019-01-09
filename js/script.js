@@ -60,9 +60,9 @@ function displaySongInfo(){
         
     });
     
-    images_links.forEach(function(images_links) {
-        
-        
+    images_links.forEach(function(images) {
+        var pic = `<img src=${images} >`;
+        $("#images").append(pic);
     });
     
     artists.forEach(function(artists) {
@@ -74,7 +74,8 @@ function displaySongInfo(){
     });
     
     links.forEach(function(links) {
-        
+        var link = `<a href=${links}>Click Me</a>`
+        $("#links").append(link);
     });
     // BELOW Use forEach Loop to display the data from each of your array's in the correct div
 
@@ -83,6 +84,11 @@ function displaySongInfo(){
 function emptySongInfo(){
     $("#songs").empty();
     // Use jQuery to empty all of the remaining divs
+    
+    $("#artists").empty();
+    $("#lengths").empty();
+    $("#images").empty();
+    $("#links").empty();
 
 
 }
@@ -92,7 +98,13 @@ function addSongInfo(){
     var songName = $("#song").val();
     songs.push(songName);
     // BELOW write the code to add new items to each of the other arrays
-
+    
+    var artistName = $("#artist").val();
+    artists.push(artistName);
+    
+    var songLength = $("#length").val();
+    lengths.push(songLength); 
+    
 
 }
 
