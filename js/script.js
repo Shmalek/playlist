@@ -103,8 +103,14 @@ function addSongInfo(){
     artists.push(artistName);
     
     var songLength = $("#length").val();
-    lengths.push(songLength); 
+    songLengths.push(songLength); 
     
+    var imgURL = $("#image").val();
+    images_links.push(imgURL);
+    console.log(imgURL);
+    
+    var link = $("#link").val();
+    links.push(link);
 
 }
 
@@ -113,5 +119,10 @@ $("#add").click(function() {
     addSongInfo();
     displaySongInfo();
 });
+
+$("#delete").click(function() {
+    emptySongInfo();
+});
+
 
 displaySongInfo();
